@@ -1,0 +1,119 @@
+====================================================
+  VELORA LENS STUDIO — HOW TO RUN (SEPARATE FILES)
+====================================================
+
+FILES IN THIS PROJECT:
+  index.html      — Home / Landing Page
+  about.html      — About Us Page
+  gallery.html    — Gallery with Filter
+  pricing.html    — Pricing Packages + FAQ
+  booking.html    — Booking Form
+  contact.html    — Contact Page
+
+  css/common.css  — Shared styles (navbar, footer)
+  css/home.css    — Home page styles
+  css/about.css   — About page styles
+  css/gallery.css — Gallery styles
+  css/pricing.css — Pricing styles
+  css/booking.css — Booking form styles
+  css/contact.css — Contact page styles
+
+  js/common.js    — Shared JS (navbar, fade-in)
+  js/gallery.js   — Gallery filter JS
+  js/booking.js   — Booking form JS
+  js/contact.js   — Contact form JS
+
+  php/booking.php — Booking form PHP backend
+  php/contact.php — Contact form PHP backend
+
+  sql/database.sql — MySQL database setup
+
+  images/
+    img1.jpg  → Luxury wedding scene (Hero background)
+    img2.jpg  → Wedding couple (Gallery / Mehndi)
+    img3.jpg  → Outdoor couple shoot
+    img4.jpg  → Barat night (Pricing banner)
+    img5.jpg  → Walima celebration (Booking banner)
+    img6.jpg  → Bridal fashion shoot
+    img7.jpg  → Drone / aerial shot
+    img8.jpg  → Outdoor portrait (CTA background)
+    img9.jpg  → Fashion editorial
+    img10.jpg → Studio setup (About page)
+    img11.jpg → Professional photographer
+    img12.jpg → Evening / contact background
+
+====================================================
+  OPTION A — QUICK PREVIEW (No server needed)
+====================================================
+
+1. Extract (unzip) the project folder anywhere.
+2. Open the "images" folder — you'll see img1.jpg to img12.jpg
+3. Double-click "index.html" — opens in your browser!
+4. Navigate between pages using the top menu.
+
+All pages, gallery filter, and navigation work.
+Forms will show a success message (demo mode).
+
+====================================================
+  OPTION B — FULL SETUP WITH PHP + MYSQL (XAMPP)
+====================================================
+
+STEP 1: Install XAMPP
+  Download from: https://www.apachefriends.org/download.html
+  Install with default settings.
+
+STEP 2: Start XAMPP
+  Open XAMPP Control Panel
+  Click Start → Apache (web server)
+  Click Start → MySQL (database)
+  Both should show green "Running"
+
+STEP 3: Copy Project Files
+  Copy the "velora-v2" folder to:
+  Windows: C:\xampp\htdocs\velora-v2\
+  Mac:     /Applications/XAMPP/htdocs/velora-v2/
+
+STEP 4: Set Up Database
+  Open browser → http://localhost/phpmyadmin/
+  Click the "SQL" tab
+  Open sql/database.sql in Notepad
+  Copy all the text → Paste into SQL box → Click "Go"
+  Database "photography_booking" is now created!
+
+STEP 5: Open Website
+  Go to: http://localhost/velora-v2/
+  Or directly: http://localhost/velora-v2/index.html
+
+STEP 6: Check PHP Settings (if needed)
+  Open php/booking.php and php/contact.php
+  Make sure these match your MySQL setup:
+    define('DB_USER', 'root');   <- usually 'root' for XAMPP
+    define('DB_PASS', '');       <- blank by default in XAMPP
+
+====================================================
+  HOW IMAGES ARE USED IN HTML
+====================================================
+
+Each image is loaded by name in the HTML files:
+
+  index.html   uses: img1.jpg (hero), img11.jpg (photographer),
+                     img10.jpg (about), img2-8 (gallery teaser)
+
+  about.html   uses: img10.jpg, img11.jpg, img8.jpg, img9.jpg
+
+  gallery.html uses: img1.jpg to img12.jpg (all 12 images)
+
+  pricing.html uses: img4.jpg (banner)
+
+  booking.html uses: img5.jpg (banner)
+
+  contact.html uses: img12.jpg (banner), img10.jpg (studio)
+
+To replace with your own photos:
+  1. Save your image as img1.jpg, img2.jpg, etc.
+  2. Put it in the images/ folder
+  3. It automatically shows in all the right pages!
+
+====================================================
+  © 2026 Velora Lens Studio — All Rights Reserved
+====================================================

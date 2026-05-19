@@ -1,0 +1,100 @@
+/* =============================================
+   PRICING PAGE — Specific Styles (pricing.css)
+   ============================================= */
+
+.pricing-intro { padding: 80px 0 0; background: #111111; }
+
+.pricing-section { padding: 40px 0 100px; background: #111111; }
+.pricing-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+    max-width: 1100px; margin: 0 auto; padding: 0 32px; align-items: start;
+}
+
+.price-card {
+    background: #160e04; border: 1px solid rgba(216,160,61,0.15);
+    border-top: 3px solid #D8A03D; border-radius: 6px; padding: 36px 28px;
+    position: relative; transition: transform 0.3s, box-shadow 0.3s;
+}
+.price-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
+.price-card.featured {
+    border-color: rgba(216,160,61,0.4);
+    transform: translateY(-14px);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+}
+.price-card.featured:hover { transform: translateY(-20px); }
+
+.pc-badge {
+    position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+    background: linear-gradient(135deg,#D8A03D,#e8b84b); color: #111;
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase; padding: 4px 16px; border-radius: 20px; white-space: nowrap;
+}
+.pc-tag { font-size: 0.68rem; letter-spacing: 3px; text-transform: uppercase; color: #D8A03D; font-weight: 600; display: block; margin-bottom: 8px; }
+.pc-name { font-family: 'Playfair Display',serif; font-size: 1.6rem; color: #F5E8D3; margin-bottom: 16px; }
+.pc-price { display: flex; align-items: baseline; gap: 4px; margin-bottom: 4px; }
+.pc-cur  { font-size: 0.9rem; color: #D8A03D; font-weight: 500; }
+.pc-amt  { font-family: 'Playfair Display',serif; font-size: 2.4rem; font-weight: 700; color: #F5E8D3; }
+.pc-dur  { font-size: 0.75rem; color: rgba(245,232,211,0.45); margin-bottom: 26px; padding-bottom: 22px; border-bottom: 1px solid rgba(216,160,61,0.1); }
+.pc-top  { margin-bottom: 24px; }
+
+.pc-features { display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
+.pc-features li { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; }
+.pc-features li i { font-size: 0.75rem; width: 16px; flex-shrink: 0; }
+.pc-features li.yes { color: rgba(245,232,211,0.82); }
+.pc-features li.yes i { color: #D8A03D; }
+.pc-features li.no  { color: rgba(245,232,211,0.28); }
+.pc-features li.no  i { color: rgba(245,232,211,0.2); }
+
+.btn-package {
+    display: block; width: 100%; padding: 13px; text-align: center;
+    border: 1px solid rgba(216,160,61,0.35); border-radius: 4px;
+    background: transparent; color: #F5E8D3;
+    font-family: 'Poppins',sans-serif; font-size: 0.85rem; font-weight: 500;
+    transition: all 0.3s; cursor: pointer; letter-spacing: 0.5px;
+}
+.btn-package:hover { background: rgba(216,160,61,0.1); border-color: #D8A03D; color: #D8A03D; }
+.btn-package.gold {
+    background: linear-gradient(135deg,#D8A03D,#e8b84b); border-color: #D8A03D;
+    color: #111; font-weight: 600; box-shadow: 0 4px 18px rgba(216,160,61,0.3);
+}
+.btn-package.gold:hover { box-shadow: 0 6px 26px rgba(216,160,61,0.5); color: #111; }
+
+/* Included section */
+.included-section { padding: 100px 0; background: #0e0904; }
+.included-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    max-width: 1100px; margin: 0 auto; padding: 0 32px;
+}
+.inc-item {
+    background: rgba(82,58,40,0.15); border: 1px solid rgba(216,160,61,0.15);
+    border-radius: 6px; padding: 32px 24px; text-align: center; transition: border-color 0.3s;
+}
+.inc-item:hover { border-color: rgba(216,160,61,0.4); }
+.inc-item i { font-size: 2rem; color: #D8A03D; margin-bottom: 14px; display: block; }
+.inc-item h4 { font-family: 'Playfair Display',serif; font-size: 1.1rem; color: #F5E8D3; margin-bottom: 8px; }
+.inc-item p  { font-size: 0.84rem; color: rgba(245,232,211,0.55); line-height: 1.7; }
+
+/* FAQ */
+.faq-section { padding: 100px 0; background: #111111; }
+.faq-list { max-width: 800px; margin: 0 auto; padding: 0 32px; display: flex; flex-direction: column; gap: 12px; }
+.faq-item { background: #160e04; border: 1px solid rgba(216,160,61,0.12); border-radius: 6px; overflow: hidden; }
+.faq-q {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 18px 22px; cursor: pointer;
+    font-size: 0.95rem; font-weight: 500; color: #F5E8D3;
+}
+.faq-q i { color: #D8A03D; font-size: 0.85rem; transition: transform 0.3s; flex-shrink: 0; margin-left: 12px; }
+.faq-a {
+    max-height: 0; overflow: hidden; transition: max-height 0.35s ease;
+    padding: 0 22px; font-size: 0.88rem; color: rgba(245,232,211,0.6); line-height: 1.8;
+}
+.faq-item.open .faq-a { padding-bottom: 18px; }
+
+@media (max-width: 1024px) {
+    .pricing-grid { grid-template-columns: 1fr; max-width: 420px; }
+    .price-card.featured { transform: none; }
+    .included-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 680px) {
+    .included-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Shoot | Velora Lens Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/booking.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">
+                <svg width="42" height="42" viewBox="0 0 44 44" fill="none">
+                    <circle cx="22" cy="22" r="20" stroke="#D8A03D" stroke-width="2"/>
+                    <circle cx="22" cy="22" r="13" stroke="#D8A03D" stroke-width="1.5"/>
+                    <circle cx="22" cy="22" r="6" fill="#D8A03D" opacity="0.85"/>
+                    <line x1="22" y1="2" x2="22" y2="9" stroke="#D8A03D" stroke-width="1.5"/>
+                    <line x1="22" y1="35" x2="22" y2="42" stroke="#D8A03D" stroke-width="1.5"/>
+                    <line x1="2" y1="22" x2="9" y2="22" stroke="#D8A03D" stroke-width="1.5"/>
+                    <line x1="35" y1="22" x2="42" y2="22" stroke="#D8A03D" stroke-width="1.5"/>
+                </svg>
+            </div>
+            <div class="logo-text">
+                <span class="logo-main">VELORA</span>
+                <span class="logo-sub">Lens Studio</span>
+            </div>
+        </a>
+        <nav class="nav-menu" id="navMenu">
+            <a href="index.html"   class="nav-link">Home</a>
+            <a href="about.html"   class="nav-link">About</a>
+            <a href="gallery.html" class="nav-link">Gallery</a>
+            <a href="pricing.html" class="nav-link">Pricing</a>
+            <a href="booking.html" class="nav-link">Booking</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="user/login.php" class="nav-link" style="color:var(--gold);"><i class="fa-solid fa-user" style="font-size:0.8em; margin-right:4px;"></i>Portal</a>
+        </nav>
+        <div class="nav-right">
+            <a href="booking.html" class="btn-book">Book Shoot</a>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </div>
+</header>
+
+<!-- PAGE BANNER -->
+<div class="page-banner">
+    <div class="page-banner-bg">
+        <img src="images/img5.jpg" alt="Booking Banner">
+        <div class="page-banner-overlay"></div>
+    </div>
+    <div class="page-banner-content">
+        <h1>Book Your <span class="gold-text">Shoot</span></h1>
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span>Booking</span>
+        </div>
+    </div>
+</div>
+
+<!-- BOOKING SECTION -->
+<section class="booking-section">
+    <div class="booking-wrap">
+
+        <!-- Left Info Panel -->
+        <div class="booking-info fade-in">
+            <span class="section-label">Let's Work Together</span>
+            <h2 class="section-title">Reserve Your <span class="gold-text">Date</span></h2>
+            <p class="bk-desc">Fill in the form and our team will reach out within 24 hours to confirm your booking and discuss your vision in detail.</p>
+
+            <div class="bk-features">
+                <div class="bk-feat"><i class="fa-solid fa-shield-halved"></i><div><strong>100% Secure</strong><span>Your info stays private</span></div></div>
+                <div class="bk-feat"><i class="fa-solid fa-clock"></i><div><strong>24-Hour Response</strong><span>Quick confirmation</span></div></div>
+                <div class="bk-feat"><i class="fa-solid fa-handshake"></i><div><strong>Flexible Packages</strong><span>Custom deals available</span></div></div>
+                <div class="bk-feat"><i class="fa-solid fa-location-dot"></i><div><strong>All Pakistan</strong><span>We travel to you</span></div></div>
+                <div class="bk-feat"><i class="fa-solid fa-camera"></i><div><strong>Pro Equipment</strong><span>Full-frame cameras & lenses</span></div></div>
+                <div class="bk-feat"><i class="fa-solid fa-star"></i><div><strong>Award Winning</strong><span>Trusted by 1000+ clients</span></div></div>
+            </div>
+
+            <!-- Quick contact -->
+            <div class="quick-contact">
+                <p>Prefer to call?</p>
+                <a href="tel:+923001234567" class="qc-phone">
+                    <i class="fa-solid fa-phone"></i> +92 327 6691900
+                </a>
+                <a href="https://wa.me/923276691900" class="qc-wa">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+                </a>
+            </div>
+        </div>
+
+        <!-- Booking Form -->
+        <div class="booking-form-box fade-in">
+            <h3>Booking Request Form</h3>
+            <p class="form-note">All fields marked * are required.</p>
+
+            <div id="userProfileBanner" style="display:none; padding:12px 18px; background:rgba(216,160,61,0.1); border:1px solid rgba(216,160,61,0.3); border-radius:4px; margin-bottom:20px; font-size:0.85rem; color:var(--gold);">
+                <i class="fa-solid fa-user-check" style="margin-right:8px;"></i>
+                Booking as <strong id="upbName"></strong> (<span id="upbEmail"></span>).
+                <a href="user/dashboard.php" style="color:#fff;text-decoration:underline;margin-left:10px;">Go to Dashboard</a>
+            </div>
+
+            <form id="bookingForm" action="php/booking.php" method="POST" novalidate>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" placeholder="Your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+92 300 0000000" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="event_type">Event Type *</label>
+                        <select id="event_type" name="event_type" required>
+                            <option value="">Select event type</option>
+                            <option value="Wedding">Wedding (Barat / Walima)</option>
+                            <option value="Mehndi">Mehndi Ceremony</option>
+                            <option value="Portrait">Portrait Session</option>
+                            <option value="Fashion">Fashion Shoot</option>
+                            <option value="PreWedding">Pre-Wedding Shoot</option>
+                            <option value="Event">Corporate / Social Event</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="event_date">Event Date *</label>
+                        <input type="date" id="event_date" name="event_date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Event Location *</label>
+                        <input type="text" id="location" name="location" placeholder="City, Venue" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="package">Preferred Package</label>
+                    <select id="package" name="package">
+                        <option value="">Select a package (optional)</option>
+                        <option value="Basic">Basic — Silver Moments (PKR 35,000)</option>
+                        <option value="Standard">Standard — Golden Stories (PKR 85,000)</option>
+                        <option value="Premium">Premium — Royal Legacy (PKR 185,000)</option>
+                        <option value="Custom">Custom Package</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Additional Message</label>
+                    <textarea id="message" name="message" rows="4"
+                        placeholder="Tell us more about your event, special requests, or questions..."></textarea>
+                </div>
+
+                <div class="form-alert success" id="bookSuccess">
+                    <i class="fa-solid fa-circle-check"></i>
+                    Your booking request has been submitted successfully! We'll contact you within 24 hours.
+                </div>
+                <div class="form-alert error" id="bookError">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    Please fill in all required fields correctly.
+                </div>
+
+                <button type="submit" class="btn-submit">
+                    <i class="fa-solid fa-paper-plane"></i> Submit Booking Request
+                </button>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+<!-- PROCESS STEPS -->
+<section class="booking-process">
+    <div class="section-header">
+        <span class="section-label">How It Works</span>
+        <h2 class="section-title">The Booking <span class="gold-text">Process</span></h2>
+    </div>
+    <div class="process-steps">
+        <div class="ps-item fade-in">
+            <div class="ps-num">01</div>
+            <h4>Submit the Form</h4>
+            <p>Fill in your event details above and submit the booking request.</p>
+        </div>
+        <div class="ps-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="ps-item fade-in">
+            <div class="ps-num">02</div>
+            <h4>We Confirm</h4>
+            <p>Our team contacts you within 24 hours to confirm availability.</p>
+        </div>
+        <div class="ps-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="ps-item fade-in">
+            <div class="ps-num">03</div>
+            <h4>Choose Package</h4>
+            <p>We discuss your needs and finalize the perfect package for you.</p>
+        </div>
+        <div class="ps-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="ps-item fade-in">
+            <div class="ps-num">04</div>
+            <h4>Your Day</h4>
+            <p>We arrive and capture every precious moment beautifully.</p>
+        </div>
+        <div class="ps-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="ps-item fade-in">
+            <div class="ps-num">05</div>
+            <h4>Delivery</h4>
+            <p>Receive your edited photos and cinematic film on time.</p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-top-line"></div>
+    <div class="footer-container">
+        <div class="footer-col">
+            <div class="footer-logo">
+                <svg width="34" height="34" viewBox="0 0 44 44" fill="none">
+                    <circle cx="22" cy="22" r="20" stroke="#D8A03D" stroke-width="2"/>
+                    <circle cx="22" cy="22" r="13" stroke="#D8A03D" stroke-width="1.5"/>
+                    <circle cx="22" cy="22" r="6" fill="#D8A03D" opacity="0.85"/>
+                    <line x1="22" y1="2" x2="22" y2="9" stroke="#D8A03D" stroke-width="1.5"/>
+                    <line x1="22" y1="35" x2="22" y2="42" stroke="#D8A03D" stroke-width="1.5"/>
+                    <line x1="2" y1="22" x2="9" y2="22" stroke="#D8A03D" stroke-width="1.5"/>
+                    <line x1="35" y1="22" x2="42" y2="22" stroke="#D8A03D" stroke-width="1.5"/>
+                </svg>
+                <div><span class="footer-logo-main">VELORA</span><span class="footer-logo-sub">Lens Studio</span></div>
+            </div>
+            <p class="footer-desc">Pakistan's luxury wedding photography studio. Capturing timeless stories since 2017.</p>
+            <div class="footer-social">
+                <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="social-link"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" class="social-link"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h4 class="footer-col-title">Quick Links</h4>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li><li><a href="pricing.html">Pricing</a></li>
+                <li><a href="booking.html">Booking</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4 class="footer-col-title">Services</h4>
+            <ul class="footer-links">
+                <li><a href="#">Wedding Photography</a></li><li><a href="#">Cinematic Films</a></li>
+                <li><a href="#">Fashion Shoots</a></li><li><a href="#">Drone Videography</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4 class="footer-col-title">Contact</h4>
+            <ul class="footer-contact-list">
+                <li><i class="fa-brands fa-instagram"></i> @veloralensstudio</li>
+                <li><i class="fa-brands fa-whatsapp"></i> +92 300 1234567</li>
+                <li><i class="fa-solid fa-envelope"></i> info@veloralens.pk</li>
+                <li><i class="fa-solid fa-location-dot"></i> Gulberg III, Lahore</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom"><div class="footer-divider"></div><p>© 2026 Velora Lens Studio — All Rights Reserved</p></div>
+</footer>
+
+<script src="js/common.js"></script>
+<script src="js/booking.js?v=2"></script>
+</body>
+</html>
